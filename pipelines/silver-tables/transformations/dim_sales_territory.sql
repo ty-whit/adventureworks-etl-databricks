@@ -2,7 +2,7 @@ CREATE MATERIALIZED VIEW adventureworksdatawarehouse.default.dim_sales_territory
 AS
 -- dim_sales_territory
 SELECT
-  explode() AS sales_territory_key,
+  -- explode() AS sales_territory_key,
   -- NONE sales_territory_alternate_key,
   st.Name AS sales_territory_region,
   st.CountryRegionCode AS sales_territory_country,
