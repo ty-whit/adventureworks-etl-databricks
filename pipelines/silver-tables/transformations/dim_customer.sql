@@ -38,7 +38,7 @@ SELECT
   ) AS CommuteDistance
 FROM 
   adventureworks.sales.customer AS c
-  JOIN adventureworks.person.person AS p c.PersonID = p.BusinessEntityID
+  JOIN adventureworks.person.person AS p on c.PersonID = p.BusinessEntityID
   JOIN adventureworks.person.emailaddress AS ea ON p.BusinessEntityID = ea.BusinessEntityID
 ORDER BY
   LastName, FirstName
