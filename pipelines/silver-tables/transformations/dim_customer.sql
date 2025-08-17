@@ -26,7 +26,7 @@ SELECT
   -- AddressLine2, 
   -- Phone,
   -- DateFirstPurchase,
-  concat(
+  concat( 0,
     -- CASE 
     --   WHEN "column" BETWEEN 0 AND 1 THEN '0-1'
     --   WHEN "column" BETWEEN 1 AND 2 THEN '1-2'
@@ -37,7 +37,8 @@ SELECT
     " Miles"
   ) AS CommuteDistance
 FROM 
-  adventureworks.person.person AS p
+  adventureworks.sales.customer AS c
+  JOIN adventureworks.person.person AS p c.PersonID = p.BusinessEntityID
   JOIN adventureworks.person.emailaddress AS ea ON p.BusinessEntityID = ea.BusinessEntityID
 ORDER BY
   LastName, FirstName
